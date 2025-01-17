@@ -1,0 +1,27 @@
+<!--
+SPDX-FileCopyrightText: 2025 Imran Mustafa <imran@imranmustafa.net>
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+{% load humanize %}
+{% block paste-list %}
+<h2 class="subtitle has-text-centered">Pastes</h2>
+<div class="columns is-mobile is-centered">
+  <div class="column is-5">
+    {% for paste in pastes %}
+    <div class="card">
+      <div class="card-content">
+	<p class="is-family-monospace title is-4"><a href="{% url 'paste' paste.id %}">{{ paste.id }}</a></p>
+	<p class="subtitle is-6"><a href="{% url 'profile' paste.author %}">@{{ paste.author }}</a></p>
+      </div>
+      <div class="card-content">
+	<p class="is-clipped">{{paste.content}}</p>
+	<br />
+	<time class="" datetime="{{ paste.time_created }}">{{ paste.time_created | naturaltime }}</time>
+      </div>
+    </div>
+{% endfor %}   
+  </div>
+</div>
+{% endblock %}

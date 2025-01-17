@@ -1,0 +1,26 @@
+# SPDX-FileCopyrightText: 2025 Imran Mustafa <imran@imranmustafa.net>
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+* YAP
+A simple paste bin built with [[https://www.djangoproject.com/][Django]].
+** Setup
+This Project works with [[https://pipenv.pypa.io/en/latest/][pipenv]] to manage python dependencies so make sure that
+you have it installed. After you do that pipenv will automatically install all
+the dependencies that the project needs.
+#+begin_src sh
+  pipenv install
+#+end_src
+Then you should enter the virtual environment of the project and create the
+super user for the application.
+#+begin_src sh
+  pipenv shell
+  python manage.py createsuperuser
+#+end_src
+This should be everything that you need for the basic setup. you can quickly
+deploy a development server while in the virtual environment to make sure
+everything works.
+#+begin_src sh
+  pipenv shell
+  python manage.py createsuperuser
+#+end_src
+Or deploy it like any other Django app. with the documentation [[https://docs.djangoproject.com/en/5.1/howto/deployment/][here]]

@@ -1,0 +1,19 @@
+<!--
+SPDX-FileCopyrightText: 2025 Imran Mustafa <imran@imranmustafa.net>
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+<p class="label">ID: <a href="{% url 'paste' paste.id %}">{{paste.id}}</a></p>
+<p class="label"> Author: <a href="{% url 'profile' paste.author.username %}">@{{paste.author.username}}</a></p>
+  <label class="label">Content:</label>
+  <p
+    class="box"
+    >
+    {{paste.content}}
+    </p>
+</div>
+{% endblock %}

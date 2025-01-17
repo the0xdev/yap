@@ -1,0 +1,33 @@
+<!--
+SPDX-FileCopyrightText: 2025 Imran Mustafa <imran@imranmustafa.net>
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+{% extends "base.html" %}
+
+{% block content %}
+{% if user.is_authenticated %}
+{% load crispy_forms_tags %}
+<div class="columns is-centered">
+<form class="box column is-5" action="{% url 'index' %}" method="POST">
+  {% csrf_token %}
+    {{form | crispy }}
+  <div class="control">
+    <input class="button is-link is-pulled-right" type="submit" value="Submit">
+  </div>
+</form>
+</div>
+{% else %}
+
+<p class="content has-text-centered">
+  <a href="{% url 'login' %}">
+    <strong>
+      Login
+    </strong>
+  </a>
+  to paste.
+</p>
+{% endif %}
+{% include 'paste-list.html' %}
+{% endblock %}

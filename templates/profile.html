@@ -1,0 +1,16 @@
+<!--
+SPDX-FileCopyrightText: 2025 Imran Mustafa <imran@imranmustafa.net>
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<div class="container">
+  <p class="content has-text-centered">Pastes by user <strong>@{{ user.username }}</strong></p>
+</div>
+{% include 'paste-list.html' %}
+{% endblock %}

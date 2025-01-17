@@ -1,0 +1,18 @@
+# SPDX-FileCopyrightText: 2025 Imran Mustafa <imran@imranmustafa.net>
+#
+# SPDX-License-Identifier: CC0-1.0
+
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+django-crispy-forms = "*"
+crispy-bulma = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
